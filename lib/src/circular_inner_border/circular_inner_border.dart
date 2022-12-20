@@ -10,6 +10,7 @@ class CircularProfile extends StatelessWidget {
     this.radius = 40,
     this.onTap,
     this.showShadow = true,
+    this.showInnerBorder = true,
     this.customShadow,
   }) : super(key: key);
   final ImageProvider<Object> image;
@@ -19,12 +20,12 @@ class CircularProfile extends StatelessWidget {
   final double radius;
   final VoidCallback? onTap;
   final bool showShadow;
+  final bool showInnerBorder;
   final List<BoxShadow>? customShadow;
 
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    // print("${radius * 0.13}");
 
     return InkWell(
       onTap: onTap,
@@ -50,15 +51,17 @@ class CircularProfile extends StatelessWidget {
             fit: BoxFit.cover,
           ),
         ),
-        child: Container(
-          decoration: BoxDecoration(
-            shape: BoxShape.circle,
-            border: Border.all(
-              color: innerBorderColor ?? Colors.white.withOpacity(0.5),
-              width: borderThickness ?? radius * 0.1,
-            ),
-          ),
-        ),
+        child: showInnerBorder
+            ? Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: innerBorderColor ?? Colors.white.withOpacity(0.5),
+                    width: borderThickness ?? radius * 0.1,
+                  ),
+                ),
+              )
+            : null,
       ),
     );
   }

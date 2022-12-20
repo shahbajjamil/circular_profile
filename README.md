@@ -12,7 +12,7 @@ Circular profile is to place image with custom effects and make developer life s
 ```yaml
 
 dependencies:
-    circular_profile: ^0.0.1
+    circular_profile: ^0.0.2
 
 ```
 
