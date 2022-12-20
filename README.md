@@ -13,7 +13,7 @@ and the Flutter guide for
 
 ## Features
 
-Circular profile is to place image with custom effects and make dev life simple
+Circular profile is to place image with custom effects and make developer life simple
 
 ## Installation
 
