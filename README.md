@@ -3,6 +3,8 @@
 
 Circular profile is to place image with custom effects and make developer life simple
 
+[<img src="https://github.com/shahbajjamil/circular_profile/blob/assets/s1.png?raw=true" width="100" />]
+
 ## Installation
 
 1: Add the latest version of the package to your pubspec.yaml (and run `dart pub get`):
