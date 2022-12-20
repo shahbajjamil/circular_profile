@@ -3,7 +3,7 @@
 
 Circular profile is to place image with custom effects and make developer life simple
 
-[<img src="https://github.com/shahbajjamil/circular_profile/blob/assets/s1.png?raw=true" width="100" />]
+<img src="https://github.com/shahbajjamil/circular_profile/blob/assets/s1.png?raw=true" width="300" />
 
 ## Installation
 
