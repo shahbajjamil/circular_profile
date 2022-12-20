@@ -5,38 +5,46 @@ class CircularProfile extends StatelessWidget {
     Key? key,
     required this.image,
     this.backgroundColor,
-    this.borderColor,
-    this.borderThickness = 3,
-    this.radius,
+    this.innerBorderColor,
+    this.borderThickness,
+    this.radius = 40,
     this.onTap,
+    this.showShadow = true,
+    this.customShadow,
   }) : super(key: key);
   final ImageProvider<Object> image;
   final Color? backgroundColor;
-  final Color? borderColor;
-  final double borderThickness;
-  final double? radius;
+  final Color? innerBorderColor;
+  final double? borderThickness;
+  final double radius;
   final VoidCallback? onTap;
+  final bool showShadow;
+  final List<BoxShadow>? customShadow;
 
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
+    // print("${radius * 0.13}");
 
     return InkWell(
       onTap: onTap,
       child: Container(
-        width: radius != null ? radius! * 2 : size.width * 0.16,
-        height: radius != null ? radius! * 2 : size.width * 0.16,
+        width: radius * 2,
+        height: radius * 2,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          boxShadow: [
-            BoxShadow(
-              color: backgroundColor ??
-                  Theme.of(context).primaryColor.withOpacity(0.5),
-              spreadRadius: 2,
-              blurRadius: 5,
-              offset: const Offset(0, 0),
-            ),
-          ],
+          boxShadow: showShadow
+              ? customShadow ??
+                  [
+                    BoxShadow(
+                      color: backgroundColor ??
+                          Theme.of(context).primaryColor.withOpacity(0.5),
+                      spreadRadius: radius * 0.1,
+                      blurRadius: radius * 0.3,
+                      offset: const Offset(0, 0),
+                    ),
+                  ]
+              : null,
           image: DecorationImage(
             image: image,
             fit: BoxFit.cover,
@@ -46,8 +54,8 @@ class CircularProfile extends StatelessWidget {
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             border: Border.all(
-              color: borderColor ?? Colors.white.withOpacity(0.5),
-              width: borderThickness,
+              color: innerBorderColor ?? Colors.white.withOpacity(0.5),
+              width: borderThickness ?? radius * 0.1,
             ),
           ),
         ),

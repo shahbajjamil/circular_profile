@@ -11,19 +11,40 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages).
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Circular profile is to place image with custom effects and make dev life simple
+
+## Installation
+
+1: Add the latest version of the package to your pubspec.yaml (and run `dart pub get`):
+
+```yaml
+
+dependencies:
+    circular_profile: ^0.0.1
+
+```
+
+2: Import the package and use it in your Flutter app.
+
+```dart
+
+import 'package:circular_profile/circular_profile.dart';
+
+```
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```dart
 
-## Usage
+CircularProfile(
+image: NetworkImage("https://images.unsplash.com/photo-1671521277748-843a8128f7bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNHx8fGVufDB8fHx8&auto=format&fit=crop&w=900&q=60"),
+),
+
+```
+
+<!-- ## Usage
 
 TODO: Include short and useful examples for package users. Add longer examples
 to `/example` folder.
@@ -36,4 +57,4 @@ const like = 'sample';
 
 TODO: Tell users more about the package: where to find more information, how to
 contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+from the package authors, and more. -->
